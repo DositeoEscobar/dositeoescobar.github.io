@@ -260,9 +260,10 @@ function previousPAge(){
 }
 
 function goToPage(page){
-  currentPage = page
+  currentPage = parseInt(page)
   printUsers(currentPage)
-  checkPage(page)
+  checkPage(currentPage)
+
 }
 
 buscar_form.onsubmit = function(event){
