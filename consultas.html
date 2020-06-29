@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Consultas</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .media {
+        border-style: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainContainer" class="container">
+      <div class="row mt-3">
+        <div class="col">
+          <form id="buscar_form" class="form-inline" style="width: inherit;">
+            <div class="row" style="width: inherit;">
+              <div class="col-10">
+                <input
+                  id = "buscar_text"
+                  class="form-control"
+                  type="text"
+                  style="width: inherit;"
+                  placeholder="nombre de usuario a buscar"
+                  aria-label="search"
+                />
+              </div>
+              <div class="col-2">
+                <button class="btn btn-primary btn-rounded" type="submit">
+                  Buscar
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <small class="form-text text-muted">Buscar usuario</small>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="userContainer">
+   
+      </div>
+      <div class="row mt-3">
+        <nav aria-label="Page navigation example justify-content-start">
+          <ul id="paginater" class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- Erase user -->
+    <div
+      class="modal fade"
+      id="erase_user"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Borrar Usuario</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="erase_info" class="container-fluid">
+              
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button id="erase_accept" type="button" class="btn btn-primary">
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- edit user -->
+    <div
+      class="modal fade"
+      id="edit_usr"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edición de usuario</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="edit_form" action="">
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="Nombre_edit"
+                      id="nombre_edit"
+                      aria-describedby="helpId"
+                      placeholder="Nombre o nombres"
+                      required
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="Apellidos_edit"
+                      id="apellidos_edit"
+                      aria-describedby="helpId"
+                      placeholder="Apellidos"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="Correo_edit"
+                      id="correo_edit"
+                      aria-describedby="helpId"
+                      placeholder="Tu Correo"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password_edit"
+                      id="password_edit"
+                      aria-describedby="helpId"
+                      placeholder="Contraseña"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password_confirm_edit"
+                      id="password_confirm_edit"
+                      aria-describedby="helpId"
+                      placeholder="Confirmar contraseña"
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <input
+                      type="date"
+                      class="form-control"
+                      name="fecha_nac_edit"
+                      id="fecha_nac_edit"
+                      aria-describedby="helpId"
+                      max="2005-01-01"
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3 border ml-1 mr-1">
+                  <div class="col">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="Sex_edit"
+                        id="mujer_edit"
+                        value="M"
+                      />
+                      <label class="form-check-label" for="Mujer">
+                        Mujer
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="Sex_edit"
+                        id="hombre_edit"
+                        value="H"
+                      />
+                      <label class="form-check-label" for="Hombre">
+                        Hombre
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <input
+                      type="url"
+                      class="form-control"
+                      name="ur_perf_edit"
+                      id="ur_perf_edit"
+                      aria-describedby="helpId"
+                      placeholder="Url de imagen de perfil"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    Editar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="consultas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>detalle</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h2 class="text-center">Ver Detalles</h2>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+              <div class="media">
+                <a class="d-flex align-self-center my-2 mx-3" href="#">
+                  <img
+                    id="image_user_detalle"
+                    class="w-100 rounded-circle"
+                    src=""
+                    alt="img"
+                  />
+                </a>
+                <div class="media-body">
+                  <div class="d-flex flex-column align-items-start">
+                    <form id="detalle_form" action="">
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-6">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="nombre_detalles"
+                                  id="nombre_detalle"
+                                  aria-describedby="helpId"
+                                  placeholder="Nombre o nombres"
+                                  required
+                                />
+                              </div>
+                              <div class="col-6">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="apellidos_detalle"
+                                  id="apellidos_detalle"
+                                  aria-describedby="helpId"
+                                  placeholder="Apellidos"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                              <div class="col">
+                                <input
+                                  type="email"
+                                  class="form-control"
+                                  name="correo_detalle"
+                                  id="correo_detalle"
+                                  aria-describedby="helpId"
+                                  placeholder="Tu Correo"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                              <div class="col">
+                                <input
+                                  type="password"
+                                  class="form-control"
+                                  name="password_detalle"
+                                  id="password_detalle"
+                                  aria-describedby="helpId"
+                                  placeholder="Contraseña"
+                                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                              <div class="col">
+                                <input
+                                  type="password"
+                                  class="form-control"
+                                  name="password_confirm_detalle"
+                                  id="password_confirm_detalle"
+                                  aria-describedby="helpId"
+                                  placeholder="Confirmar contraseña"
+                                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                              <div class="col">
+                                <input
+                                  type="date"
+                                  class="form-control"
+                                  name="fecha_nac_detalle"
+                                  id="fecha_nac_detalle"
+                                  aria-describedby="helpId"
+                                  max="2000-01-01"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="row mt-3 border ml-1 mr-1">
+                              <div class="col">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="sex_detalle"
+                                    id="mujer_detalle"
+                                    value="M"
+                                    checked
+                                  />
+                                  <label class="form-check-label" for="Mujer">
+                                    Mujer
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="sex_detalle"
+                                    id="hombre_detalle"
+                                    value="H"
+                                  />
+                                  <label class="form-check-label" for="Hombre">
+                                    Hombre
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mt-3">
+                              <div class="col">
+                                <input
+                                  type="url"
+                                  class="form-control"
+                                  name="ur_perf_detalle"
+                                  id="ur_perf_detalle"
+                                  aria-describedby="helpId"
+                                  placeholder="Url de imagen de perfil"
+                                  required
+                                />
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                id="regresar_detalle"
+                                type="button"
+                                class="btn btn-secondary"
+                              >
+                                Regresar
+                              </button>
+                              <button id="submit_btn_Detalle" type="submit" class="btn btn-primary">
+                                Actualizar
+                              </button>
+                            </div>
+                            <div id="fail-alert" width="100" class="alert alert-danger" role="alert" style="display:none">
+                              El usuario no se registró con exito
+                            </div>
+                            <div id="success-alert" class="alert alert-success" role="alert" style="display:none">
+                              El usuario se registró con exito
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`  
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="utils.js"></script>
+    <script src="detalle.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
